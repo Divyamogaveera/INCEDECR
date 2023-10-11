@@ -49,3 +49,79 @@
     />
   </body>
 </html>
+
+<!-- Asked 9 years, 11 months ago
+Modified 9 months ago
+Viewed 249k times
+109
+
+I'm trying to push a file to a git repo of a friend but errors on public key.
+
+git push origin testbranch
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+Where and how do we define public / private keys?
+
+git remote -v returns:
+
+origin  git@github.com:Sesamzaad/NET.git (fetch)
+origin  git@github.com:Sesamzaad/NET.git (push)
+Any help is appreciated.
+
+gitpermissionspublic-key
+Share
+Follow
+edited Jul 6, 2020 at 9:20
+Martijn Pieters's user avatar
+Martijn Pieters♦
+1.1m301301 gold badges40734073 silver badges33563356 bronze badges
+asked Oct 29, 2013 at 14:15
+Wyguf Seak's user avatar
+Wyguf Seak
+1,15322 gold badges99 silver badges88 bronze badges
+2
+possible duplicate of github: newbie problems -> Permission denied (publickey). fatal: The remote end hung up unexpectedly – 
+AD7six
+ Oct 29, 2013 at 14:23
+Hi @wyguf, Please accept my answer if it helped. :) Thanks – 
+Shrutee
+ May 29, 2017 at 7:29
+3
+\302\226git@github.com: Permission denied (publickey). <- I needed to remove the spurious characters in my remote url that were added when I copied it from guthub. – 
+jozxyqk
+ Jul 13, 2019 at 3:21
+Luan Si Ho's solution worked for me. stackoverflow.com/a/43672761/7061796 – 
+Umer Khalid
+ Jun 14, 2021 at 18:08
+Add a comment
+23 Answers
+Sorted by:
+
+Highest score (default)
+161
+
+I was facing same problem and here is what I did that worked for me.
+
+Use ssh instead of http. Remove origin if its http.
+
+git remote rm origin
+Add ssh url
+
+git remote add origin git@github.com:<username>/<repo>.git
+Generate ssh key inside .ssh/ folder. It will ask for path and passphrase where you can just press enter and proceed.
+
+cd ~/.ssh
+ssh-keygen
+Copy the key. You can view your key using -
+
+cat ~/.ssh/id_rsa.pub
+If you hadn't specified a different path then this will be the default path.
+
+Add this key to your github account.
+
+Next do -
+
+ssh -T git@github.com
+You will get a welcome message in your console.
+
+cd into to your project folder. git push -u origin master now works! -->
