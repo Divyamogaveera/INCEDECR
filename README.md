@@ -1,3 +1,14 @@
+Number set to 10 we can easily increament or decrement by clicking those buttons
+
+![image](https://github.com/Divyamogaveera/INCEDECR/assets/85350201/e268be85-46af-4831-ba5e-0b75f313bb02)
+Increament
+![image](https://github.com/Divyamogaveera/INCEDECR/assets/85350201/5f4b5466-5b9b-428b-a707-28ddb433b028)
+
+decreament
+![image](https://github.com/Divyamogaveera/INCEDECR/assets/85350201/0c4064f4-abe4-453d-a020-f50f042ae961)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
