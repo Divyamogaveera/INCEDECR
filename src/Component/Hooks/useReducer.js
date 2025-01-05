@@ -10,7 +10,7 @@ const reducer = (state, action) => {
   }
   return state;
 };
-
+//reducer hook
 const UseReducer = () => {
   //   const [myNum, setMyNum] = React.useState(initialData);
   const initialData = 10;
